@@ -40,7 +40,7 @@ export default function TokenTrade({
           className="w-full"
           onValueChange={setActiveTab}
         >
-          <TabsList className="grid w-full grid-cols-2 h-8 mb-4">
+          <TabsList className="grid w-full grid-cols-2 h-12 mb-4">
             <TabsTrigger
               value="buy"
               className={`text-xs ${

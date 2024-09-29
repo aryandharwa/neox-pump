@@ -68,7 +68,7 @@ export default function SellTabContent({
           type="number"
           value={amount}
           onChange={(e) => onAmountChange(e.target.value)}
-          className="w-full h-8 text-sm bg-gray-100 dark:bg-gray-700 border-red-300 dark:border-red-500 text-red-600 dark:text-red-400 pr-16"
+          className="w-full h-12 text-sm bg-gray-100 dark:bg-gray-700 border-red-300 dark:border-red-500 text-red-600 dark:text-red-400 pr-16"
         />
         <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
           <span className="text-red-600 dark:text-red-400 text-sm">
@@ -82,7 +82,7 @@ export default function SellTabContent({
           variant="outline"
           size="sm"
           onClick={() => onAmountChange("0")}
-          className="text-[10px] h-6 bg-gray-200 dark:bg-gray-700 text-red-500 dark:text-red-400 border-red-300 dark:border-red-500"
+          className="text-[10px] h-12 bg-gray-200 dark:bg-gray-700 text-red-500 dark:text-red-400 border-red-300 dark:border-red-500"
         >
           reset
         </Button>
@@ -90,7 +90,7 @@ export default function SellTabContent({
           variant="outline"
           size="sm"
           onClick={() => onQuickAmount(1)}
-          className="text-[10px] h-6 bg-gray-200 dark:bg-gray-700 text-red-500 dark:text-red-400 border-red-300 dark:border-red-500"
+          className="text-[10px] h-12 bg-gray-200 dark:bg-gray-700 text-red-500 dark:text-red-400 border-red-300 dark:border-red-500"
         >
           1 {token.symbol}
         </Button>
@@ -98,7 +98,7 @@ export default function SellTabContent({
           variant="outline"
           size="sm"
           onClick={() => onQuickAmount(5)}
-          className="text-[10px] h-6 bg-gray-200 dark:bg-gray-700 text-red-500 dark:text-red-400 border-red-300 dark:border-red-500"
+          className="text-[10px] h-12 bg-gray-200 dark:bg-gray-700 text-red-500 dark:text-red-400 border-red-300 dark:border-red-500"
         >
           5 {token.symbol}
         </Button>
@@ -106,7 +106,7 @@ export default function SellTabContent({
           variant="outline"
           size="sm"
           onClick={() => onQuickAmount(10)}
-          className="text-[10px] h-6 bg-gray-200 dark:bg-gray-700 text-red-500 dark:text-red-400 border-red-300 dark:border-red-500"
+          className="text-[10px] h-12 bg-gray-200 dark:bg-gray-700 text-red-500 dark:text-red-400 border-red-300 dark:border-red-500"
         >
           10 {token.symbol}
         </Button>
@@ -116,7 +116,7 @@ export default function SellTabContent({
         onClick={() => {
           sellToken();
         }}
-        className="w-full h-8 bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 text-white font-bold text-sm"
+        className="w-full h-12 bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 text-white font-bold text-sm"
         disabled={isPending}
       >
         {isPending ? (
