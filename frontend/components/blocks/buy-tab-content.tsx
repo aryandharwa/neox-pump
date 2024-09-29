@@ -86,7 +86,7 @@ export default function BuyTabContent({
           type="number"
           value={amount}
           onChange={(e) => onAmountChange(e.target.value)}
-          className="w-full h-8 text-sm bg-gray-100 dark:bg-gray-700 border-green-300 dark:border-green-500 text-green-600 dark:text-green-400 pr-16"
+          className="w-full h-12 text-sm bg-gray-100 dark:bg-gray-700 border-green-300 dark:border-green-500 text-green-600 dark:text-green-400 pr-16"
         />
         <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
           <span className="text-green-600 dark:text-green-400 text-sm">
@@ -100,7 +100,7 @@ export default function BuyTabContent({
           variant="outline"
           size="sm"
           onClick={() => onAmountChange("0")}
-          className="text-[10px] h-6 bg-gray-200 dark:bg-gray-700 text-green-500 dark:text-green-400 border-green-300 dark:border-green-500"
+          className="text-[10px] h-12 bg-gray-200 dark:bg-gray-700 text-green-500 dark:text-green-400 border-green-300 dark:border-green-500"
         >
           reset
         </Button>
@@ -108,7 +108,7 @@ export default function BuyTabContent({
           variant="outline"
           size="sm"
           onClick={() => onQuickAmount(1)}
-          className="text-[10px] h-6 bg-gray-200 dark:bg-gray-700 text-green-500 dark:text-green-400 border-green-300 dark:border-green-500"
+          className="text-[10px] h-12 bg-gray-200 dark:bg-gray-700 text-green-500 dark:text-green-400 border-green-300 dark:border-green-500"
         >
           1 {token?.symbol}
         </Button>
@@ -116,7 +116,7 @@ export default function BuyTabContent({
           variant="outline"
           size="sm"
           onClick={() => onQuickAmount(5)}
-          className="text-[10px] h-6 bg-gray-200 dark:bg-gray-700 text-green-500 dark:text-green-400 border-green-300 dark:border-green-500"
+          className="text-[10px] h-12 bg-gray-200 dark:bg-gray-700 text-green-500 dark:text-green-400 border-green-300 dark:border-green-500"
         >
           5 {token?.symbol}
         </Button>
@@ -124,14 +124,14 @@ export default function BuyTabContent({
           variant="outline"
           size="sm"
           onClick={() => onQuickAmount(10)}
-          className="text-[10px] h-6 bg-gray-200 dark:bg-gray-700 text-green-500 dark:text-green-400 border-green-300 dark:border-green-500"
+          className="text-[10px] h-12 bg-gray-200 dark:bg-gray-700 text-green-500 dark:text-green-400 border-green-300 dark:border-green-500"
         >
           10 {token?.symbol}
         </Button>
       </div>
 
       <Button
-        className="w-full h-8 bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 text-black dark:text-white font-bold text-sm flex items-center justify-center"
+        className="w-full h-12 bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 text-black dark:text-white font-bold text-sm flex items-center justify-center"
         onClick={() => {
           buyToken();
         }}

@@ -33,7 +33,7 @@ const Header = () => {
           <div className="hidden md:flex space-x-2">
             <Button
               onClick={() =>
-                window.open("https://x.com/flow_blockchain", "_blank")
+                window.open("https://x.com/neo_blockchain", "_blank")
               }
               variant="outline"
               size="sm"
@@ -46,27 +46,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Middle - Marquee */}
-        <div className="flex-1 mx-2 md:mx-4 overflow-hidden">
-          <div className="relative w-full h-6 overflow-hidden">
-            <div className="absolute whitespace-nowrap animate-marquee">
-              <Badge
-                variant="secondary"
-                className="py-0.5 px-1 text-[8px] bg-yellow-400 dark:bg-yellow-600 text-black dark:text-white"
-              >
-                ENnSCc bought 0.0200 FLOW of baldo • 4KLU76 created Tank on
-                09/20/24 • BTC price: $63,235 • FLOW gas: 25 gwei •
-              </Badge>
-              <Badge
-                variant="secondary"
-                className="py-0.5 px-1 text-[8px] bg-yellow-400 dark:bg-yellow-600 text-black dark:text-white ml-4"
-              >
-                ENnSCc bought 0.0200 FLOW of baldo • 4KLU76 created Tank on
-                09/20/24 • BTC price: $63,235 • FLOW gas: 25 gwei •
-              </Badge>
-            </div>
-          </div>
-        </div>
 
         {/* Right side */}
         <div className="flex items-center space-x-1 md:space-x-2">

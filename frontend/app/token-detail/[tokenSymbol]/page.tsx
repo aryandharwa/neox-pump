@@ -158,7 +158,7 @@ export default function TokenDetail() {
               Token Detail for {pageToken?.name}
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2">
+          <CardContent className="space-y-10">
             <Avatar className="w-32 h-32 mx-auto">
               <AvatarImage
                 src={pageToken?.tokenImageUrl}
@@ -166,7 +166,7 @@ export default function TokenDetail() {
               />
               <AvatarFallback>{pageToken?.symbol}</AvatarFallback>
             </Avatar>
-            <div className="text-[11px] space-y-2">
+            <div className="text-[16px] space-y-5">
               <p className="flex justify-between">
                 <span className="text-green-600 dark:text-green-400 font-bold">
                   Creator Address:
