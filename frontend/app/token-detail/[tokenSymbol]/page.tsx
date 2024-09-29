@@ -75,49 +75,59 @@ export default function TokenDetail() {
 
     console.log("pageToken", pageToken);
 
-    const generateCandlestickData = () => {
-      const interval = 30 * 60 * 1000; // 30 min in milliseconds
-      const now = Date.now();
-      const data = [];
+    // const generateCandlestickData = () => {
+    //   const interval = 30 * 60 * 1000; // 30 min in milliseconds
+    //   const now = Date.now();
+    //   const data = [];
     
-      for (let i = 0; i < 4; i++) {
-        const startTime = now - (i + 1) * interval;
-        const endTime = now - i * interval;
+    //   for (let i = 0; i < 4; i++) {
+    //     const startTime = now - (i + 1) * interval;
+    //     const endTime = now - i * interval;
     
-        let prices = [];
+    //     let prices = [];
         
-        // Simulate fetching price data at small intervals within the current interval
-        for (let j = startTime; j < endTime; j += 1000) { // 1 second intervals
-          const priceAtInterval = Number(calculatedCost); // Replace with your logic to get price
-          prices.push(priceAtInterval);
-        }
+    //     // Simulate fetching price data at small intervals within the current interval
+    //     for (let j = startTime; j < endTime; j += 1000) { // 1 second intervals
+    //       const priceAtInterval = Number(calculatedCost); // Replace with your logic to get price
+    //       prices.push(priceAtInterval);
+    //     }
     
-        const open = prices[0]; // Opening price is the first price in the interval
-        const close = prices[prices.length - 1]; // Closing price is the last price in the interval
-        const high = Math.max(...prices); // Maximum price during the interval
-        const low = Math.min(...prices); // Minimum price during the interval
+    //     const open = prices[0]; // Opening price is the first price in the interval
+    //     const close = prices[prices.length - 1]; // Closing price is the last price in the interval
+    //     const high = Math.max(...prices); // Maximum price during the interval
+    //     const low = Math.min(...prices); // Minimum price during the interval
     
-        data.push({
-          time: Math.floor(startTime / 1000), // Convert to seconds
-          open,
-          high,
-          low,
-          close,
-        });
-      }
+    //     data.push({
+    //       time: Math.floor(startTime / 1000), // Convert to seconds
+    //       open,
+    //       high,
+    //       low,
+    //       close,
+    //     });
+    //   }
     
-      // Sort the data by time to ensure proper order
-      data.sort((a, b) => a.time - b.time);
+    //   // Sort the data by time to ensure proper order
+    //   data.sort((a, b) => a.time - b.time);
     
-      setCandlestickData(data);
-    };
+    //   setCandlestickData(data);
+    // };
     
-    // Call the function when appropriate
-    generateCandlestickData();
+    // // Call the function when appropriate
+    // generateCandlestickData();
     
+
     
 
   }, [tokenSymbol, tokens, pageToken, calculatedCost]);
+
+  const priceData = [
+    { time: '2024-09-28', open: 75.16, high: 82.84, low: 36.16, close: 45.72 },
+    { time: '2024-09-28', open: 45.12, high: 53.90, low: 45.12, close: 48.09 },
+    { time: '2024-09-28', open: 60.71, high: 60.71, low: 53.39, close: 59.29 },
+    { time: '2024-09-29', open: 68.26, high: 68.26, low: 59.04, close: 60.50 },
+    { time: '2024-09-29', open: 67.71, high: 105.85, low: 66.67, close: 91.04 },
+
+  ];
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-2 font-mono text-xs">
@@ -261,7 +271,7 @@ export default function TokenDetail() {
           </CardHeader>
           <CardContent>
             <div id="chart" className="flex justify-center">
-              <Chart data={candlestickData} />
+              <Chart data={priceData} />
             </div>
           </CardContent>
         </Card>
