@@ -252,10 +252,19 @@ export default function TokenDetail() {
           </CardContent>
         </Card>
       </div>
-
-      <div id="chart" className="mt-6">
-        <h2 className="text-lg text-gray-700 dark:text-gray-300 mb-4">Price History</h2>
-        <Chart data={candlestickData} />
+      <div className="flex justify-center mt-6">
+        <Card className="w-full md:w-3/4 bg-white dark:bg-gray-800 border border-blue-300 dark:border-blue-500">
+          <CardHeader>
+            <CardTitle className="text-lg text-blue-600 dark:text-blue-400">
+              Price History
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div id="chart" className="flex justify-center">
+              <Chart data={candlestickData} />
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

@@ -2,24 +2,71 @@
 
 ## Project Overview
 
-This sophisticated decentralized application (dApp) represents a cutting-edge platform for the creation, trading, and management of meme-inspired cryptocurrency tokens. Leveraging the robust capabilities of blockchain technology, specifically the Ethereum ecosystem, this project offers a seamless interface for users to engage with the burgeoning world of digital assets in a secure, transparent, and user-friendly manner.
+This sophisticated decentralized application (dApp) represents a cutting-edge platform for the creation, trading, and management of meme-inspired cryptocurrency tokens. Leveraging the robust capabilities of blockchain technology, specifically the `Neo ecosystem` which is EVM compataible , this project offers a seamless interface for users to engage with the burgeoning world of digital assets in a secure, transparent, and user-friendly manner.
+
+## Project Setup
+
+To set up the project locally, follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/aryandharwa/neox-pump
+   ```
+2. **Navigate into the project directory:**
+    ```bash
+        cd neox-pump
+   ```
+3. **Move to the frontend directory:**
+    ```bash
+    cd frontend
+    ```
+
+4. **Install project dependencies:**
+    ```bash
+    yarn install
+    ```
+5. **Update environment variables:**
+    - change the environments in the `.env.example`
+    
+6. **Start the development server:**
+    ```bash
+    yarn dev
+    ```
+This will start the server at` http://localhost:3000.`
+
+
+
+
 
 ## Core Components
 
 ### 1. Smart Contract Infrastructure
 
-At the heart of this dApp lies a meticulously crafted smart contract ecosystem, primarily centered around the `TokenFactory` contract. This contract serves as the foundational pillar for token creation and management, embodying the principles of decentralization and immutability inherent to blockchain technology.
+At the heart of this dApp lies a meticulously crafted smart contract ecosystem, primarily centered around the `TokenFactoryv2` contract. This contract serves as the foundational pillar for token creation and management, embodying the principles of decentralization and immutability inherent to blockchain technology.
 
 #### Key Functions:
 
-- **createToken(string memory name, string memory symbol)**  
+- **calculateCost(uint256 currentSupply, uint256 tokensToBuy)**  
+    The cost is calculated using the calculateCost function, which takes into account the current supply and the number of tokens to be purchased. This function uses a formula that includes a gradual price increase factor (K).
+
+
+- **createMemeToken(string memory name,string memory symbol,string memory imageUrl,string memory description)**  
   This function facilitates the instantiation of new token contracts, allowing users to mint their own unique digital assets. It encapsulates the token creation process, ensuring each new token adheres to predefined standards and is properly registered within the ecosystem.
 
-- **buy(address tokenAddress, uint256 amount)**  
+  *Funding Raised:*
+    The amount of ETH sent by the buyer is added to the fundingRaised variable of the memeToken struct, which keeps track of how much funding has been raised for that specific token.
+  
+
+
+- **buyMemeToken(address memeTokenAddress, uint256 tokenQty)**  
   Enabling the acquisition of tokens, this function manages the intricate process of token purchases. It incorporates sophisticated checks to ensure the availability of tokens, calculates the required payment based on a dynamic pricing model, and executes the transfer of tokens to the buyer.
 
-- **calculateRequiredFlow(address tokenAddress, uint256 amount)**  
-  This function implements a complex pricing algorithm, determining the cost of token purchases based on the current supply and demand dynamics. It utilizes a quadratic equation to model the price curve, ensuring a fair and predictable pricing mechanism.
+- **sellMemeToken(address memeTokenAddress, uint256 tokenQty)**  
+
+    The sellMemeToken function allows users to sell their tokens back to the contract. It first checks if the token is listed and if the seller has enough tokens to sell.
+    Refund Calculation:
+    The function calculates the ETH refund based on the number of tokens being sold using the calculateRefund function. This function ensures that the refund amount is calculated correctly based on the current supply and the number of tokens being sold.
+
 
 ### 2. Frontend Application
 
@@ -86,8 +133,30 @@ The frontend application exemplifies modern web development practices:
 - **Performance Optimization**  
   Implementing code-splitting, lazy loading, and memoization techniques, the application achieves optimal loading times and runtime performance.
 
-## Conclusion
+### Anti-Rug Pull Mechanisms
 
-This meme token generation and trading platform represents a pinnacle of blockchain application development, seamlessly integrating complex smart contract functionality with an intuitive and responsive user interface. By leveraging cutting-edge technologies and adhering to best practices in both blockchain and web development, this project sets a new standard for decentralized finance applications.
+One of the most significant features of this platform is its robust anti-rug pull mechanisms, making it the first truly unruggable meme token launchpad on the Neo ecosystem. Here's why:
 
-The meticulous attention to detail, from the implementation of sophisticated pricing algorithms to the crafting of an engaging user experience, demonstrates a commitment to excellence that positions this platform at the forefront of the rapidly evolving digital asset landscape.
+- **Smart Contract-Controlled Liquidity**
+The platform's smart contracts, particularly the `TokenFactoryv2`, manage the liquidity pool for each token. This prevents creators from arbitrarily removing liquidity, a common method used in rug pulls.
+
+- **Bonding Curve Implementation**
+The use of a bonding curve for token pricing ensures a fair and predictable token valuation model. This transparency makes it difficult for malicious actors to manipulate token prices for personal gain.
+
+- **Automated Buy and Sell Functions**
+The `buyMemeToken` and `sellMemeToken` functions are implemented directly in the smart contract, ensuring that all trades follow predefined rules. This prevents creators from blocking sell orders, another common rug pull tactic.
+
+- **Transparent Funding Tracking**
+The `fundingRaised` variable in the `memeToken` struct keeps track of how much funding has been raised for each token. This transparency allows users to monitor the financial health of each project.
+
+- **Decentralized Control**
+Once deployed, the token contracts operate independently of their creators, adhering to the rules set by the `TokenFactoryv2` contract. This decentralization prevents any single entity from having undue control over the token's economy.
+
+- **Gradual Price Increase**
+The `calculateCost` function implements a gradual price increase factor, preventing sudden price spikes that could be exploited by bad actors.
+
+---
+
+By implementing these features, the platform ensures that token creators cannot arbitrarily manipulate token supplies, remove liquidity, or block sell orders—common techniques used in rug pulls. This creates a safer environment for users to create, buy, and trade meme tokens.
+
+The meticulous attention to detail, from the implementation of sophisticated pricing algorithms to the crafting of an engaging user experience, demonstrates a commitment to excellence that positions this platform at the forefront of the rapidly evolving digital asset landscape. By prioritizing user safety and transparency, this platform not only facilitates the creation and trading of meme tokens but also sets a new standard for trust and security in the decentralized finance space.
