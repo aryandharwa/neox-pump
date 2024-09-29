@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import CreateTokenDialog from "@/components/blocks/create-token-dialog";
 import { useReadContract } from "wagmi";
 import { contract_abi } from "@/abi/TokenFactoryAbi";
-// import { flowTestnet } from "viem/chains";
+
 import ProjectCard from "@/components/blocks/project-card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { X } from "lucide-react";

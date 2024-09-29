@@ -9,7 +9,6 @@ import { ArrowLeft } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { useAccount, useReadContract } from "wagmi";
 import { contract_abi } from "@/abi/TokenFactoryAbi";
-// import { flowTestnet } from "viem/chains";
 import { createClient } from "@/utils/supabase/client";
 import { useModal } from "connectkit";
 import TokenTrade from "@/components/blocks/token-trade";
