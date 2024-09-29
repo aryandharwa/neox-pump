@@ -1,5 +1,5 @@
 # Meme Token Generation and Trading Platform
-
+- https://neo-x-pump.vercel.app/
 ## Project Overview
 
 This sophisticated decentralized application (dApp) represents a cutting-edge platform for the creation, trading, and management of meme-inspired cryptocurrency tokens. Leveraging the robust capabilities of blockchain technology, specifically the `Neo ecosystem` which is EVM compataible , this project offers a seamless interface for users to engage with the burgeoning world of digital assets in a secure, transparent, and user-friendly manner.
@@ -35,7 +35,8 @@ To set up the project locally, follow these steps:
 This will start the server at` http://localhost:3000.`
 
 
-
+## Project structure through flowchart
+![alt text](flow.jpg)
 
 
 ## Core Components
