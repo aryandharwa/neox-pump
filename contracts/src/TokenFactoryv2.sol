@@ -19,6 +19,14 @@ contract TokenFactory is ReentrancyGuard {
         uint256 fundingRaised;
         address tokenAddress;
         address creatorAddress;
+        CandlestickData candlestickData; // Integrating CandlestickData
+    }
+    struct CandlestickData {
+        uint256 open;
+        uint256 high;
+        uint256 low;
+        uint256 close;
+        uint256 timestamp;
     }
 
     address[] public memeTokenAddresses;
